@@ -4,8 +4,8 @@ var fs = require('fs')
 const Topic = "#";
 
 const client = mqtt.connect('mqtts://chiragparmar.me',{
-  "username": "chirag",
-  "password": "uptownfunk"
+  "username": "",
+  "password": ""
 })
 
 // DATABASE MANAGEMENT
