@@ -19,7 +19,7 @@ def on_connect(self, mosq, userdata, rc):
 def on_message(client, userdata, msg):
     print "Topic: ", msg.topic + '\nMessage: ' + str(msg.payload)
     mqttdump = str(msg.payload)
-    logData = mqttdump.split(',')
+    logData = mqttdump.split(';')
     csvlog(path, logData)
 
 
