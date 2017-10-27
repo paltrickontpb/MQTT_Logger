@@ -13,7 +13,7 @@ def csvlog(csvfile,fields):
 
 
 def on_connect(self, mosq, userdata, rc):
-    self.subscribe("") #Add Channel Name
+    self.subscribe("logFeed") #Add Channel Name
 
 
 def on_message(client, userdata, msg):
@@ -28,13 +28,13 @@ def on_disconnect(client, userdata, rc=0):
     client.loop_stop()
 
 client = mqtt.Client()
-username = "" #Add Username
-client.username_pw_set(username, password="") #Add Password
+username = "ntluser" #Add Username
+client.username_pw_set(username, password="iotntlpaltrick") #Add Password
 
 client.on_connect = on_connect
 client.on_message = on_message
 
-client.connect("mqtt.host", 1883, 60) #Put Host,Port and timeout
+client.connect("mqtt.prototech.xyz", 1883, 60) #Put Host,Port and timeout
 client.loop_forever()
 
 
