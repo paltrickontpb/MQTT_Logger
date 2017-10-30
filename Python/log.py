@@ -28,13 +28,13 @@ def on_disconnect(client, userdata, rc=0):
     client.loop_stop()
 
 client = mqtt.Client()
-username = "ntluser" #Add Username
-client.username_pw_set(username, password="iotntlpaltrick") #Add Password
+username = "" #Add Username
+client.username_pw_set(username, password="") #Add Password
 
 client.on_connect = on_connect
 client.on_message = on_message
 
-client.connect("mqtt.prototech.xyz", 1883, 60) #Put Host,Port and timeout
+client.connect("mqtt.host", 1883, 60) #Put Host,Port and timeout
 client.loop_forever()
 
 
